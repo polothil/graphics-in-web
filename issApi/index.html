@@ -25,13 +25,16 @@
   <body>
     <h1>Where is the ISS?</h1>
 
-    <h4>Latitude: <span id="lat"></span><br />Longitude: <span id="lon"></span></h4>
+    <h4>
+      Latitude: <span id="lat"></span>&deg;<br />Longitude:
+      <span id="lon"></span>&deg;
+    </h4>
 
     <div id="issMap"></div>
 
     <script>
       // Making a map and tiles
-      const mymap = L.map('issMap').setView([0, 0], 1);
+      const mymap = L.map('issMap').setView([0, 0], 5);
       const attribution =
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
@@ -56,16 +59,14 @@
         // console.log(data.longitude);
         const { latitude, longitude } = data;
 
-        // L.marker([latitude, longitude]).addTo(mymap);
         marker.setLatLng([latitude, longitude]);
+        mymap.setView([latitude, longitude], 5);
 
-        document.getElementById('lat').textContent = latitude;
-        document.getElementById('lon').textContent = longitude;
+        document.getElementById('lat').textContent = latitude.toFixed(2);
+        document.getElementById('lon').textContent = longitude.toFixed(2);
       };
       // getData();
-      setInterval(() => {
-        getData();
-      }, 2000);
+      setInterval(getData, 1000);
     </script>
   </body>
 </html>
