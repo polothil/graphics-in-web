@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 4 Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="alert alert-primary">
+        <strong>Hello World!</strong>
+        <p>This is an alert</p>
+      </div>
+      <a href="#" class="btn btn-success">Submit</a>
+      <a href="#" class="btn btn-outline-danger">Submit</a>
+    </div>
+
+    <div class="container">
+      <a href="#" class="btn btn-info btn-block m-2">Submit</a>
+
+      <!-- Dropdowns -->
+      <div class="btn-group">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown
+        </button>
+        <div
+          class="dropdown-menu"
+          x-placement="bottom-start"
+          style="
+            position: absolute;
+            will-change: transform;
+            top: 0px;
+            left: 0px;
+            transform: translate3d(0px, 38px, 0px);
+          "
+        >
+          <a href="#" class="dropdown-item">Home</a>
+          <a href="#" class="dropdown-item">Shop</a>
+          <a href="#" class="dropdown-item">Cart</a>
+          <a href="#" class="dropdown-item">Checkout</a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">Profile</a>
+        </div>
+      </div>
+
+      <!-- Button Grouping -->
+      <div class="btn-group">
+        <a href="#" class="btn btn-success">One</a>
+        <a href="#" class="btn btn-success">Two</a>
+        <a href="#" class="btn btn-success">Three</a>
+      </div>
+
+      <div class="btn-group-vertical">
+        <a href="#" class="btn btn-success">One</a>
+        <a href="#" class="btn btn-success">Two</a>
+        <a href="#" class="btn btn-success">Three</a>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="btn-group btn-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-primary active"> <input type="checkbox" /> Checkbox 1 </label>
+        <label class="btn btn-outline-primary"> <input type="checkbox" /> Checkbox 2 </label>
+      </div>
+
+      <!-- Cards -->
+      <div class="card bg-primary text-white mb-3 text-center">
+        <div class="card-body">
+          <blockquote class="card-blockquote">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, nostrum!</p>
+            <footer>Some Famous person</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Carousal -->
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img (1).jpg" alt="Los Angeles" />
+          </div>
+          <div class="carousel-item">
+            <img src="img (2).jpg" alt="Chicago" />
+          </div>
+          <div class="carousel-item">
+            <img src="img (3).jpg" alt="New York" />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
