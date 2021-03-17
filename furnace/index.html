@@ -4,47 +4,153 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    /> -->
     <link rel="stylesheet" href="style.css" />
     <title>Furnace</title>
   </head>
   <body>
     <div class="contanier">
-      <img src="furnace.png" alt="" class="image-container" height="650" width="auto" />
       <form class="form-container">
-        <h1>Form</h1>
+        <h1>Design Parameters of the Blast Furnace</h1>
+        <h3>Throat</h3>
+        <label for="height4">Height (h4)</label>
+        <input type="number" id="height4" value="0.2" step="0.01" onchange="updateH4()" />
+        <label for="radius2">Radius (r2)</label>
+        <input type="number" id="radius2" value="0.25" step="0.01" onchange="updateR2()" />
+
+        <h3>Shaft</h3>
+        <label for="height3">Height (h3)</label>
+        <input type="number" id="height3" value="1" step="0.01" onchange="updateH3()" />
+        <label for="radius1">Radius (r1)</label>
+        <input type="number" id="radius1" value="0.50" step="0.01" onchange="updateR1()" />
+
+        <h3>Belly</h3>
+        <label for="height2">Height (h2)</label>
+        <input type="number" id="height2" value="0.25" step="0.01" onchange="updateH2()" />
+
+        <h3>Bosh</h3>
+        <label for="height1">Height (h1)</label>
+        <input type="number" id="height1" value="0.12" step="0.01" onchange="updateH1()" />
+        <label for="radius0">Radius (r0)</label>
+        <input type="number" id="radius0" value="0.25" step="0.01" onchange="updateR0()" />
+
+        <h3>Hearth</h3>
+        <label for="height0">Height (h0)</label>
+        <input type="number" id="height0" value="0.12" step="0.01" onchange="updateH0()" />
+
+        <div class="btn">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
       </form>
-      <svg height="650" width="300" class="figure-container">
+
+      <svg height="800" width="400" class="figure-container">
         <line x1="0" y1="20" x2="100" y2="20" id="line1" />
         <line x1="100" y1="20" x2="100" y2="100" id="line2" />
-        <line x1="100" y1="100" x2="180" y2="400" id="line3" />
-        <line x1="180" y1="400" x2="180" y2="500" id="line4" />
-        <line x1="180" y1="500" x2="120" y2="550" id="line5" />
-        <line x1="120" y1="550" x2="120" y2="600" id="line6" />
-        <line x1="120" y1="600" x2="0" y2="600" id="line7" />
-
-        <!-- <line x1="60" y1="20" x2="60" y2="230" />
-        <line x1="20" y1="230" x2="100" y2="230" />
-
-        <circle cx="140" cy="70" r="20" class="figure-part" />
-
-        <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
-
-        <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
-        <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
-
-        <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
-        <line x1="140" y1="150" x2="160" y2="180" class="figure-part" /> -->
+        <line x1="100" y1="100" x2="200" y2="400" id="line3" />
+        <line x1="200" y1="400" x2="200" y2="500" id="line4" />
+        <line x1="200" y1="500" x2="100" y2="550" id="line5" />
+        <line x1="100" y1="550" x2="100" y2="600" id="line6" />
+        <line x1="100" y1="600" x2="0" y2="600" id="line7" />
       </svg>
+
+      <img src="furnace.png" alt="" class="image-container" height="650" width="auto" />
     </div>
 
     <script>
       const line1 = document.getElementById('line1');
-      console.log(line1, line1.attributes[0]);
-      line1.attributes[2].value = 40;
-      console.log(line1, line1.attributes[0]);
+      const line2 = document.getElementById('line2');
+      const line3 = document.getElementById('line3');
+      const line4 = document.getElementById('line4');
+      const line5 = document.getElementById('line5');
+      const line6 = document.getElementById('line6');
+      const line7 = document.getElementById('line7');
+      // console.log(line1, line1.attributes[0]);
 
-      // line1.attributes.x1 = 10;
-      // console.log(line1);
+      const updateR2 = () => {
+        line1.attributes[2].value = radius2.value * 400;
+        line2.attributes[2].value = radius2.value * 400;
+        line2.attributes[0].value = radius2.value * 400;
+        line3.attributes[0].value = radius2.value * 400;
+      };
+
+      const updateR1 = () => {
+        line3.attributes[2].value = radius1.value * 400;
+        line4.attributes[0].value = radius1.value * 400;
+        line4.attributes[2].value = radius1.value * 400;
+        line5.attributes[0].value = radius1.value * 400;
+      };
+
+      const updateR0 = () => {
+        line5.attributes[2].value = radius0.value * 400;
+        line6.attributes[0].value = radius0.value * 400;
+        line6.attributes[2].value = radius0.value * 400;
+        line7.attributes[0].value = radius0.value * 400;
+      };
+
+      const updateH4 = () => {
+        line2.attributes[3].value = height4.value * 400;
+        line3.attributes[1].value = height4.value * 400;
+      };
+
+      const updateH3 = () => {
+        line3.attributes[3].value = height3.value * 400;
+        line4.attributes[1].value = height3.value * 400;
+        line4.attributes[3].value = height3.value * 400 + 100;
+        line5.attributes[1].value = height3.value * 400 + 100;
+        line5.attributes[3].value = height3.value * 400 + 150;
+        line6.attributes[1].value = height3.value * 400 + 150;
+        line6.attributes[3].value = height3.value * 400 + 200;
+        line7.attributes[1].value = height3.value * 400 + 200;
+        line7.attributes[3].value = height3.value * 400 + 200;
+        height2.value = '0.25';
+        height1.value = '0.12';
+        height0.value = '0.12';
+      };
+
+      const updateH2 = () => {
+        line4.attributes[3].value = height3.value * 400 + height2.value * 400;
+        line5.attributes[1].value = height3.value * 400 + height2.value * 400;
+        line5.attributes[3].value = height3.value * 400 + height2.value * 400 + 50;
+        line6.attributes[1].value = height3.value * 400 + height2.value * 400 + 50;
+        line6.attributes[3].value = height3.value * 400 + height2.value * 400 + 100;
+        line7.attributes[1].value = height3.value * 400 + height2.value * 400 + 100;
+        line7.attributes[3].value = height3.value * 400 + height2.value * 400 + 100;
+        height1.value = '0.12';
+        height0.value = '0.12';
+      };
+
+      const updateH1 = () => {
+        line5.attributes[3].value = height3.value * 400 + height2.value * 400 + height1.value * 400;
+        line6.attributes[1].value = height3.value * 400 + height2.value * 400 + height1.value * 400;
+        line6.attributes[3].value =
+          height3.value * 400 + height2.value * 400 + height1.value * 400 + 50;
+        line7.attributes[1].value =
+          height3.value * 400 + height2.value * 400 + height1.value * 400 + 50;
+        line7.attributes[3].value =
+          height3.value * 400 + height2.value * 400 + height1.value * 400 + 50;
+        height0.value = '0.12';
+      };
+
+      const updateH0 = () => {
+        line6.attributes[3].value =
+          height3.value * 400 + height2.value * 400 + height1.value * 400 + height0.value * 400;
+        line7.attributes[1].value =
+          height3.value * 400 + height2.value * 400 + height1.value * 400 + height0.value * 400;
+        line7.attributes[3].value =
+          height3.value * 400 + height2.value * 400 + height1.value * 400 + height0.value * 400;
+      };
     </script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script> -->
   </body>
 </html>
