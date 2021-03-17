@@ -2,12 +2,12 @@ let distribution = document.getElementById('distribution');
 let chartType = document.getElementById('chartType');
 
 const distributionSel = () => {
-  // console.log(distribution, distribution[distribution.options.selectedIndex].innerText);
+  console.log(distribution, distribution[distribution.options.selectedIndex].innerText);
   chartIt();
 };
 
 const typeSel = () => {
-  // console.log(chartType.value);
+  console.log(chartType.value);
   chartIt();
 };
 
@@ -48,6 +48,7 @@ const chartIt = async () => {
       ],
     },
     options: {
+      events: ['click'],
       scales: {
         yAxes: [
           {
