@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Furnace 2</title>
+  </head>
+  <body>
+    <div class="contanier">
+      <form id="form" class="form-container">
+        <h2>Design Parameters of the Blast Furnace</h2>
+        <h3>Throat</h3>
+        <label for="height4">Height (h4)</label>
+        <input type="number" id="height4" value="0.25" step="0.01" onchange="updateH4()" />
+        <label for="radius2">Radius (r2)</label>
+        <input type="number" id="radius2" value="0.25" step="0.01" onchange="updateR2()" />
+        <br />
+        <label for="throatX">Number of Cells: X</label>
+        <input type="number" id="throatX" value="50" />
+        <label for="throatY">Y</label>
+        <input type="number" id="throatY" value="50" />
+
+        <h3>Shaft</h3>
+        <label for="height3">Height (h3)</label>
+        <input type="number" id="height3" value="1" step="0.01" onchange="updateH3()" />
+        <label for="radius1">Radius (r1)</label>
+        <input type="number" id="radius1" value="0.50" step="0.01" onchange="updateR1()" />
+        <br />
+        <label for="shaftX">Number of Cells: X</label>
+        <input type="number" id="shaftX" value="50" />
+        <label for="shaftY">Y</label>
+        <input type="number" id="shaftY" value="50" />
+
+        <h3>Belly</h3>
+        <label for="height2">Height (h2)</label>
+        <input type="number" id="height2" value="0.25" step="0.01" onchange="updateH2()" />
+        <br />
+        <label for="bellyX">Number of Cells: X</label>
+        <input type="number" id="bellyX" value="50" />
+        <label for="bellyY">Y</label>
+        <input type="number" id="bellyY" value="50" />
+
+        <h3>Bosh</h3>
+        <label for="height1">Height (h1)</label>
+        <input type="number" id="height1" value="0.12" step="0.01" onchange="updateH1()" />
+        <label for="radius0">Radius (r0)</label>
+        <input type="number" id="radius0" value="0.25" step="0.01" onchange="updateR0()" />
+        <br />
+        <label for="boshX">Number of Cells: X</label>
+        <input type="number" id="boshX" value="50" />
+        <label for="boshY">Y</label>
+        <input type="number" id="boshY" value="50" />
+
+        <h3>Hearth</h3>
+        <label for="height0">Height (h0)</label>
+        <input type="number" id="height0" value="0.12" step="0.01" onchange="updateH0()" />
+        <br />
+        <label for="hearthX">Number of Cells: X</label>
+        <input type="number" id="hearthX" value="50" />
+        <label for="hearthY">Y</label>
+        <input type="number" id="hearthY" value="50" />
+
+        <div class="btn">
+          <button type="reset" onclick="window.location.reload()">Reset</button>
+          <button type="submit">Save Data to File</button>
+        </div>
+      </form>
+
+      <svg height="800" width="400" class="figure-container">
+        <line x1="0" y1="20" x2="100" y2="20" id="line1" />
+        <line x1="100" y1="20" x2="100" y2="100" id="line2" />
+        <line x1="100" y1="100" x2="200" y2="400" id="line3" />
+        <line x1="200" y1="400" x2="200" y2="500" id="line4" />
+        <line x1="200" y1="500" x2="100" y2="550" id="line5" />
+        <line x1="100" y1="550" x2="100" y2="600" id="line6" />
+        <line x1="100" y1="600" x2="0" y2="600" id="line7" />
+      </svg>
+
+      <img src="furnace.png" alt="" class="image-container" height="650" width="auto" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
